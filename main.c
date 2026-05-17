@@ -38,13 +38,13 @@ int main()
     printf("======================================\n");
     printf("\tPATIENT PROFILE SYSTEM");
     printf("\n======================================\n");
-    printf("%d Patients loaded\n", patientCount);
+    printf("\t** %d Patient/s loaded **\n\n", patientCount);
 
     int choice = 0;
 
     do
     {
-        printf("\n      == MENU ==\n");
+        printf("\n\t\t== MAIN MENU ==\n");
         printf("    [1] Add Patient\n");
         printf("    [2] Search Patient\n");
         printf("    [3] Update a Patient Profile\n");

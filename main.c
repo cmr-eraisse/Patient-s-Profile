@@ -28,30 +28,31 @@ int nextID()
 
 void printPatient(Patient patient)
 {
-    printf("||  ID: %-4d | Name: %-20s | Age: %3d | Condition: %s  ||\n", patient.id, patient.name, patient.age, patient.condition);
+    printf("\n||  ID: %-4d | Name: %-20s | Age: %3d | Condition: %s  ||\n", patient.id, patient.name, patient.age, patient.condition);
 }
 
 int main()
 {
     patientCount = loadCSV();
 
-    printf("======================================\n");
+    system("cls");
+    printf("=======================================\n");
     printf("\tPATIENT PROFILE SYSTEM");
-    printf("\n======================================\n");
+    printf("\n=======================================\n");
     printf("\t** %d Patient/s loaded **\n\n", patientCount);
 
     int choice = 0;
 
     do
     {
-        printf("\n\t\t== MAIN MENU ==\n");
+        printf("\n\t    == MAIN MENU ==\n");
         printf("    [1] Add Patient\n");
         printf("    [2] Search Patient\n");
         printf("    [3] Update a Patient Profile\n");
         printf("    [4] Delete a Patient Profile\n");
         printf("    [5] Display All Patient Records\n");
         printf("    [6] Exit System\n");
-        printf("Enter choice: ");
+        printf("\nEnter choice: ");
         scanf("%d", &choice);
 
         switch (choice) {
@@ -71,13 +72,14 @@ int main()
                 displayPatients();
                 break;
             case 6:
-                printf("Exiting...");
+                printf("Session Terminated. Exiting...");
+                Sleep(1500);
                 exit(0);
             default:
                 printf("\nInvalid option.");
         }
     } while (choice != 0);
     
-    printf("Exiting...");
-
+    printf("Session Terminated. Exiting...");
+    Sleep(1500);
 }

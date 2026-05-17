@@ -6,6 +6,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <windows.h>
 
 #define MAX_PATIENTS 100
 #define MAX_NAME_LENGTH 50

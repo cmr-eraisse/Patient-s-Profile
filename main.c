@@ -33,14 +33,20 @@ void printPatient(Patient patient)
 
 int main()
 {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
     patientCount = loadCSV();
 
     system("cls");
+    SetConsoleTextAttribute(hConsole, 6);
     printf("=======================================\n");
+    SetConsoleTextAttribute(hConsole, 3);
     printf("\tPATIENT PROFILE SYSTEM");
+    SetConsoleTextAttribute(hConsole, 6);
     printf("\n=======================================\n");
+    SetConsoleTextAttribute(hConsole, 5);
     printf("\t** %d Patient/s loaded **\n\n", patientCount);
-
+    SetConsoleTextAttribute(hConsole, 7);
     int choice = 0;
 
     do

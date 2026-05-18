@@ -31,6 +31,7 @@ void printPatient(Patient patient)
     printf("\n||  ID: %-4d | Name: %-20s | Age: %3d | Condition: %s  ||\n", patient.id, patient.name, patient.age, patient.condition);
 }
 
+
 int main()
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -51,7 +52,9 @@ int main()
 
     do
     {
+        SetConsoleTextAttribute(hConsole, 6);
         printf("\n\t    == MAIN MENU ==\n");
+        SetConsoleTextAttribute(hConsole, 7);
         printf("    [1] Add Patient\n");
         printf("    [2] Search Patient\n");
         printf("    [3] Update a Patient Profile\n");
@@ -78,14 +81,20 @@ int main()
                 displayPatients();
                 break;
             case 6:
+                SetConsoleTextAttribute(hConsole, 6);
                 printf("Session Terminated. Exiting...");
+                SetConsoleTextAttribute(hConsole, 7);
                 Sleep(1500);
                 exit(0);
             default:
+                SetConsoleTextAttribute(hConsole, 4);
                 printf("\nInvalid option.");
+                SetConsoleTextAttribute(hConsole, 7);
         }
     } while (choice != 0);
     
+    SetConsoleTextAttribute(hConsole, 6);
     printf("Session Terminated. Exiting...");
+    SetConsoleTextAttribute(hConsole, 7);
     Sleep(1500);
 }
